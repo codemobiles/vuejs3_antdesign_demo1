@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import {
   UserOutlined,
   VideoCameraOutlined,
@@ -31,7 +31,8 @@ export default defineComponent({
     MenuFoldOutlined,
   },
   setup() {
-    return {};
+    const collapsed = ref<boolean>(false);
+    return { collapsed };
   },
 });
 </script>
