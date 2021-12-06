@@ -3,13 +3,9 @@
     <menu-unfold-outlined
       v-if="collapsed"
       class="trigger"
-      @click="() => (collapsed = !collapsed)"
+      @click="toggleCollapse"
     />
-    <menu-fold-outlined
-      v-else
-      class="trigger"
-      @click="() => (collapsed = !collapsed)"
-    />
+    <menu-fold-outlined v-else class="trigger" @click="toggleCollapse" />
   </a-layout-header>
 </template>
 
@@ -23,6 +19,7 @@ import {
   MenuFoldOutlined,
 } from "@ant-design/icons-vue";
 export default defineComponent({
+  props: ["collapsed"],
   components: {
     UserOutlined,
     VideoCameraOutlined,
@@ -30,9 +27,12 @@ export default defineComponent({
     MenuUnfoldOutlined,
     MenuFoldOutlined,
   },
-  setup() {
-    const collapsed = ref<boolean>(false);
-    return { collapsed };
+  setup(props, { emit }) {
+    const toggleCollapse = () => {
+      emit("update:collapsed", !props.collapsed);
+    };
+
+    return { toggleCollapse };
   },
 });
 </script>

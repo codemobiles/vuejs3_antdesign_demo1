@@ -1,11 +1,10 @@
 <template>
   <a-layout style="min-height: 100vh">
     <!-- menu -->
-    <span>{{ collapsed }}</span>
     <Menu v-model:collapsed="collapsed" />
     <a-layout>
       <!-- heaer -->
-      <Header />
+      <Header v-model:collapsed="collapsed" />
       <!-- content -->
       <Content />
     </a-layout>

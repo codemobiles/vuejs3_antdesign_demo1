@@ -1,7 +1,7 @@
 <template>
   <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
     <div class="logo" />
-    <a-button @click="toggleCollapse">X</a-button>
+    <a-button block @click="toggleCollapse">X</a-button>
     <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
       <a-menu-item key="1">
         <user-outlined />
