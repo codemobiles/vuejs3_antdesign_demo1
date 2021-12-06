@@ -1,7 +1,8 @@
 <template>
   <a-layout style="min-height: 100vh">
     <!-- menu -->
-    <Menu />
+    <span>{{ collapsed }}</span>
+    <Menu v-model:collapsed="collapsed" />
     <a-layout>
       <!-- heaer -->
       <Header />
